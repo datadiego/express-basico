@@ -28,6 +28,11 @@ app.post('/json', (req, res) => {
     res.send(`Hola, ${nombre}!`);
 });
 
+app.get('/usuario/:id', (req, res) => {
+    const id = req.params.id;
+    res.send(`Usuario ID: ${id}`);
+});
+
 app.listen(3000, () => {
     console.log('Servidor escuchando en el puerto 3000');
 });
