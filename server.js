@@ -14,9 +14,18 @@ app.get('/query_parameters', (req, res) => {
     res.send(`Hola, ${clave}!`);
 });
 
-app.post('/enviar', (req, res) => {
-    const mensaje = req.body.mensaje;
+app.post('/post_request', (req, res) => {
+    const mensaje = req.body.clave;
+    const nombre = req.body.nombre;
+    console.log(mensaje, nombre)
     res.send(`Mensaje recibido: ${mensaje}`);
+});
+
+app.use(express.json());
+
+app.post('/json', (req, res) => {
+    const nombre = req.body.nombre
+    res.send(`Hola, ${nombre}!`);
 });
 
 app.listen(3000, () => {

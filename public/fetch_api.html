@@ -1,0 +1,14 @@
+<h1>hola mundo</h1>
+<p id="respuesta"></p>
+<script>
+const parrafo = document.getElementById("respuesta")
+    fetch('/json', {
+    method: 'POST',
+    headers: {
+        'Content-Type': 'application/json'
+    },
+    body: JSON.stringify({ nombre: 'Diego' })
+})
+.then(response => response.text())
+.then(data => parrafo.textContent = data);
+</script>
